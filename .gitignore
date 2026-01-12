@@ -1,0 +1,16 @@
+ingredients/
+*.zip
+*100k*.tsv
+output/
+.venv/
+assets/
+datasets/
+01_intro.ipynb
+02_corpus.ipynb
+03_prep.ipynb
+04_vectorization.ipynb
+*tsv
+.python-version
+.ipynb_checkpoints/
+uv.lock
+stretch/
