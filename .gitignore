@@ -14,3 +14,4 @@ datasets/
 .ipynb_checkpoints/
 uv.lock
 stretch/
+.DS_Store
