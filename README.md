@@ -16,6 +16,100 @@ This course is structured into three modules, progressing from traditional stati
 
 ---
 
+## 🛠️ Setup
+
+### Prerequisites
+
+- Python >= 3.11
+- [uv](https://github.com/astral-sh/uv) package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd W5_NLP
+```
+
+2. Install dependencies using `uv sync`:
+```bash
+uv sync
+```
+
+This will:
+- Create a virtual environment (if it doesn't exist)
+- Install all project dependencies from `pyproject.toml`
+- Install development dependencies (Jupyter, etc.)
+
+3. Activate the virtual environment:
+```bash
+source .venv/bin/activate  # On macOS/Linux
+# or
+.venv\Scripts\activate  # On Windows
+```
+
+4. Start Jupyter to run the notebooks:
+```bash
+jupyter notebook
+```
+
+### Key Dependencies
+
+- **NLP Libraries**: `nltk`, `camel-tools`, `farasapy`, `pyarabic`, `qalsadi`
+- **ML/Data Science**: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn`
+- **Deep Learning**: `transformers`, `torch` (for Module 2)
+- **Utilities**: `joblib`, `regex`, `tiktoken`
+
+---
+
+## 📁 Project Structure
+
+```
+W5_NLP/
+├── M1/                          # Module 1: Statistical NLP
+│   └── sessions/                # Main course sessions
+│       ├── 05_classifier_ex1.ipynb
+│       ├── 06_classifier_ex2.ipynb
+│       ├── 07_information_retrieval_ex.ipynb
+│       └── 08_topic_modeling_ex.ipynb
+│
+├── M2/                          # Module 2: Deep Learning NLP
+│   ├── lessons/                 # Lesson notebooks
+│   │   └── 01_M2_intro.ipynb
+│   └── labs/                    # Hands-on labs
+│       ├── C2_M3_Lab_1_basic_tokenization/
+│       ├── C2_M3_Lab_2_embeddings/
+│       └── C2_M3_Lab_4_finetuned_text_classifier/
+│
+├── M3/                          # Module 3: Advanced Topics
+│   └── labs/
+│       └── 02_NLI.ipynb
+│
+├── pyproject.toml              # Project dependencies
+└── README.md                   # This file
+```
+
+---
+
+## 📖 Learning Path
+
+### For Beginners
+1. Start with **Module 1, Session 1** (Introduction to NLP)
+2. Work through sessions sequentially
+3. Complete all exercises before moving to Module 2
+
+### For Intermediate Learners
+1. Review Module 1 sessions 1-4 (foundations)
+2. Focus on sessions 5-8 (applications)
+3. Proceed to Module 2 for deep learning approaches
+
+### For Advanced Learners
+1. Quick review of Module 1 key concepts
+2. Deep dive into Module 2 labs
+3. Explore Module 3 advanced topics
+
+---
+
 ## 📦 Module 1: Text Analysis with Statistical NLP
 
 **Module Overview**: Learn how to work with text data using traditional statistical methods—the foundation that modern deep learning approaches build upon.
@@ -30,22 +124,22 @@ This course is structured into three modules, progressing from traditional stati
 
 The module follows a logical progression where each session builds on the previous one:
 
-1. **01_intro.ipynb** - Introduction to NLP
+1. **Session 1** - Introduction to NLP
    - What is NLP?
    - Statistical NLP vs. Deep Learning approaches
    - NLP pipeline overview
    - Python NLP ecosystem
 
-2. **02_corpus.ipynb** - Corpora & Exploratory Data Analysis
+2. **Session 2** - Corpora & Exploratory Data Analysis
    - Understanding your data
    - Corpus analysis techniques
 
-3. **03_prep.ipynb** - Text Preprocessing
+3. **Session 3** - Text Preprocessing
    - Cleaning and normalizing text
    - Tokenization
    - Text preparation for ML
 
-4. **04_vectorization.ipynb** - Vectorization
+4. **Session 4** - Vectorization
    - Converting text to numbers
    - Bag of Words (BoW)
    - TF-IDF vectorization
@@ -67,22 +161,6 @@ The module follows a logical progression where each session builds on the previo
    - Latent Dirichlet Allocation (LDA)
    - Discovering hidden topics in unlabeled documents
    - Organizing documents by topic
-
-### Datasets
-
-- **CVs Dataset**: Collection of resumes organized by topics (Topic_1, Topic_2, Topic_3)
-- **Arabic Reviews Dataset**: `ar_reviews_100k.tsv` - 100k Arabic reviews for sentiment analysis
-
-### Stretch Exercises
-
-Additional practice materials in `M1/stretch/`:
-- Regex exercises
-- TF-IDF implementation from scratch
-
-### References
-
-- [NLP Pipeline, Ali Alameer | GitHub](https://github.com/Ali-Alameer/NLP/blob/main/week2_pipeline_part1.ipynb)
-- [NLP_Getting_started(Preprocessing), Ali H. El-Kassas | Kaggle](https://www.kaggle.com/code/ali01lulu/03-nlp-getting-started-preprocessing/notebook)
 
 ---
 
@@ -123,18 +201,17 @@ Additional practice materials in `M1/stretch/`:
    - Fine-tuning BERT for text classification
    - Evaluation and deployment
 
-### Stretch Exercises
-
-- **RecSystems.ipynb** - Recommendation Systems with NLP
-
-### References
-
-- [PyTorch: Techniques and Ecosystem Tools](https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools)
-- [NLP Demystified](https://www.nlpdemystified.org/course)
-
 ---
 
 ## 🚀 Module 3: Advanced Topics
+
+**Module Overview**: Explore advanced NLP techniques including Natural Language Inference and zero-shot classification.
+
+### Key Skills
+
+- Use Natural Language Inference for zero-shot classification
+- Apply pre-trained models for various NLP tasks without fine-tuning
+- Understand entailment, contradiction, and neutral relationships
 
 ### Labs
 
@@ -143,106 +220,6 @@ Additional practice materials in `M1/stretch/`:
   - Entailment, contradiction, and neutral classification
   - Using pre-trained NLI models from HuggingFace
   - Applications of NLI for text classification
-
----
-
-## 📁 Project Structure
-
-```
-W5_NLP/
-├── M1/                          # Module 1: Statistical NLP
-│   ├── sessions/                # Main course sessions
-│   │   ├── 01_intro.ipynb
-│   │   ├── 02_corpus.ipynb
-│   │   ├── 03_prep.ipynb
-│   │   ├── 04_vectorization.ipynb
-│   │   ├── 05_classifier_ex1.ipynb
-│   │   ├── 06_classifier_ex2.ipynb
-│   │   ├── 07_information_retrieval_ex.ipynb
-│   │   └── 08_topic_modeling_ex.ipynb
-│   ├── datasets/                # Datasets
-│   │   ├── CVs/                 # CV dataset organized by topics
-│   │   └── dataset-5/           # Arabic reviews dataset
-│   ├── stretch/                 # Additional exercises
-│   └── assets/                  # Module 1 assets
-│
-├── M2/                          # Module 2: Deep Learning NLP
-│   ├── lessons/                 # Lesson notebooks
-│   │   └── 01_M2_intro.ipynb
-│   ├── labs/                    # Hands-on labs
-│   │   ├── C2_M3_Lab_1_basic_tokenization/
-│   │   ├── C2_M3_Lab_2_embeddings/
-│   │   └── C2_M3_Lab_4_finetuned_text_classifier/
-│   ├── stretch/                 # Additional exercises
-│   └── assets/                  # Module 2 assets
-│
-├── M3/                          # Module 3: Advanced Topics
-│   └── labs/
-│       └── 02_NLI.ipynb
-│
-├── assets/                      # Course-wide assets
-├── pyproject.toml              # Project dependencies
-└── README.md                   # This file
-```
-
----
-
-## 🛠️ Setup
-
-### Prerequisites
-
-- Python >= 3.11
-- [uv](https://github.com/astral-sh/uv) package manager (recommended) or pip
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd W5_NLP
-```
-
-2. Install dependencies using uv:
-```bash
-uv sync
-```
-
-Or using pip:
-```bash
-pip install -r requirements.txt
-```
-
-### Key Dependencies
-
-- **NLP Libraries**: `nltk`, `camel-tools`, `farasapy`, `pyarabic`, `qalsadi`
-- **ML/Data Science**: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn`
-- **Deep Learning**: `transformers`, `torch` (for Module 2)
-- **Utilities**: `joblib`, `regex`, `tiktoken`
-
-### Development Dependencies
-
-- `ipykernel` - Jupyter notebook support
-- `nbformat` - Notebook format handling
-- `pillow` - Image processing
-
----
-
-## 📖 Learning Path
-
-### For Beginners
-1. Start with **Module 1, Session 1** (Introduction to NLP)
-2. Work through sessions sequentially
-3. Complete all exercises before moving to Module 2
-
-### For Intermediate Learners
-1. Review Module 1 sessions 1-4 (foundations)
-2. Focus on sessions 5-8 (applications)
-3. Proceed to Module 2 for deep learning approaches
-
-### For Advanced Learners
-1. Quick review of Module 1 key concepts
-2. Deep dive into Module 2 labs
-3. Explore Module 3 advanced topics
 
 ---
 
@@ -272,29 +249,12 @@ By completing this course, you will be able to:
 
 ---
 
-## 📝 Notes
+## 📚 References
 
-- All notebooks are designed to be run sequentially
-- Datasets are included in the repository
-- Some exercises may require GPU for optimal performance (Module 2)
-- Arabic language support is included via specialized libraries
+### Module 1
+- [NLP Pipeline, Ali Alameer | GitHub](https://github.com/Ali-Alameer/NLP/blob/main/week2_pipeline_part1.ipynb)
+- [NLP_Getting_started(Preprocessing), Ali H. El-Kassas | Kaggle](https://www.kaggle.com/code/ali01lulu/03-nlp-getting-started-preprocessing/notebook)
 
----
-
-## 🤝 Contributing
-
-This is a course repository. For questions or issues, please refer to the course materials or contact the course instructor.
-
----
-
-## 📄 License
-
-[Add license information if applicable]
-
----
-
-## 🙏 Acknowledgments
-
-- Course instructors and contributors
-- Open-source NLP community
-- Dataset providers
+### Module 2
+- [PyTorch: Techniques and Ecosystem Tools](https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools)
+- [NLP Demystified](https://www.nlpdemystified.org/course)
